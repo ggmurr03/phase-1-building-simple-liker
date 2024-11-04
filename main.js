@@ -3,6 +3,44 @@ const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
+const liker = () => {
+  const heartIcons = document.querySelectorAll(".like-glyph")
+  heartIcons.forEach(addEventListener("click", handleHeart))
+  function handleHeart(event) {
+    const heart = event.target
+    mimicServerCall()
+    .then(() =>{
+      if (heart.innerText === FULL_HEART){
+        heart.innerText = EMPTY_HEART
+        heart.classList.remover(activated-heart)
+      }
+      else {
+        heart.innerText = FULL_HEART
+        heart.classList.remove("activated-heart")
+      }
+    }
+
+    )
+  }
+  
+ 
+
+  fetch(`http://localhost:3000/movies/${input.value}`)
+  .then((response)=>response.json())
+  .then((data)=>{
+      const title = document.querySelector("section#movieDetails h4");
+      const summary = document.querySelector("section#movieDetails p");
+
+      title.innerText = data.title;
+      summary.innerText = data.summary;
+  })
+
+
+})
+
+}
+
+document.addEventListener('DOMContentLoaded', liker);
 
 
 
